@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.yehyunryu.android.scoreboard.MainActivity">
+
+    <View
+        android:id="@+id/vertical_line"
+        android:layout_width="1dp"
+        android:layout_height="0dp"
+        android:background="@android:color/black"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="80dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+    
+    <TextView
+        android:id="@+id/teamA_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Team A"
+        android:textSize="24sp"
+        android:textColor="@android:color/black"
+        android:layout_marginTop="32dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/vertical_line"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+
+    <TextView
+        android:id="@+id/teamB_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Team B"
+        android:textSize="24sp"
+        android:textColor="@android:color/black"
+        android:layout_marginTop="32dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/vertical_line"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <TextView
+        android:id="@+id/teamA_score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textSize="72dp"
+        android:textColor="@android:color/black"
+        android:layout_marginTop="32dp"
+        app:layout_constraintTop_toBottomOf="@id/teamA_label"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/vertical_line"/>
+
+    <TextView
+        android:id="@+id/teamB_score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textSize="72dp"
+        android:textColor="@android:color/black"
+        android:layout_marginTop="32dp"
+        app:layout_constraintTop_toBottomOf="@id/teamA_label"
+        app:layout_constraintLeft_toRightOf="@id/vertical_line"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <Button
+        android:id="@+id/teamA_point1"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:text="Point +1"
+        android:layout_marginTop="16dp"
+        android:onClick="onTeamAPoint1"
+        app:layout_constraintTop_toBottomOf="@id/teamA_score"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/vertical_line"/>
+
+    <Button
+        android:id="@+id/teamB_point1"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:text="Point +1"
+        android:layout_marginTop="16dp"
+        android:onClick="onTeamBPoint1"
+        app:layout_constraintTop_toBottomOf="@id/teamB_score"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/vertical_line"/>
+
+    <Button
+        android:id="@+id/teamA_point2"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:text="Point +2"
+        android:layout_marginTop="16dp"
+        android:onClick="onTeamAPoint2"
+        app:layout_constraintTop_toBottomOf="@id/teamA_point1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/vertical_line"/>
+
+    <Button
+        android:id="@+id/teamB_point2"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:text="Point +2"
+        android:onClick="onTeamBPoint2"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/teamB_point1"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/vertical_line"/>
+
+    <Button
+        android:id="@+id/teamA_point3"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:text="Point +3"
+        android:onClick="onTeamAPoint3"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/teamA_point2"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/vertical_line"/>
+
+    <Button
+        android:id="@+id/teamB_point3"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:text="Point +3"
+        android:onClick="onTeamBPoint3"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/teamB_point2"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/vertical_line"/>
+
+    <Button
+        android:id="@+id/reset_button"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:text="Reset"
+        android:onClick="onReset"
+        app:layout_constraintTop_toBottomOf="@id/vertical_line"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="parent"/>
+
+</android.support.constraint.ConstraintLayout>
