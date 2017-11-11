@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3b5998</color>
+    <color name="colorPrimaryDark">#293e6a</color>
+    <color name="colorAccent">@android:color/transparent</color>
+    <color name="facebook_gray">#dfe3ee</color>
+</resources>

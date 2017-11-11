@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- TODO 3. Add the app namespace in the view group attributes -->
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.yehyunryu.android.viewpagerstartercode.MainActivity">
+
+    <!-- TODO 4. Add TabLayout -->
+
+    <!-- TODO 5. Add ViewPager -->
+
+</android.support.constraint.ConstraintLayout>
