@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/ViewPagerFinalCode.iml" filepath="$PROJECT_DIR$/ViewPagerFinalCode.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ViewPagerStarterCode.iml" filepath="$PROJECT_DIR$/ViewPagerStarterCode.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
