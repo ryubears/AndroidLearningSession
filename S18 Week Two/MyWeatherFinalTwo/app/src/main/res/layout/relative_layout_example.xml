@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This is an example of how relative layout would work -->
+<!-- This layout itself will not be used in any way for the semester project -->
+<!-- Notice that views positioned between two views have different size -->
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <View
+        android:id="@+id/center_view"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:background="@android:color/holo_purple"
+        android:layout_centerInParent="true"/>
+
+    <View
+        android:id="@+id/top_view"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="@android:color/holo_blue_dark"
+        android:layout_centerHorizontal="true"/>
+
+    <View
+        android:id="@+id/bottom_view"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="@android:color/holo_red_dark"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"/>
+
+    <View
+        android:id="@+id/left_view"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="@android:color/holo_blue_light"
+        android:layout_centerVertical="true"/>
+
+    <View
+        android:id="@+id/right_view"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="@android:color/holo_red_light"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"/>
+
+    <View
+        android:id="@+id/top_mid_view"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@android:color/darker_gray"
+        android:layout_below="@id/top_view"
+        android:layout_above="@id/center_view"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="40dp"/>
+
+    <View
+        android:id="@+id/bottom_mid_view"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@android:color/darker_gray"
+        android:layout_above="@id/bottom_view"
+        android:layout_below="@id/center_view"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="40dp"/>
+
+    <View
+        android:id="@+id/left_mid_view"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@android:color/darker_gray"
+        android:layout_toRightOf="@id/left_view"
+        android:layout_toEndOf="@id/left_view"
+        android:layout_toLeftOf="@id/center_view"
+        android:layout_toStartOf="@id/center_view"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="24dp"
+        android:layout_marginRight="24dp"/>
+
+    <View
+        android:id="@+id/right_mid_view"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@android:color/darker_gray"
+        android:layout_toRightOf="@id/center_view"
+        android:layout_toEndOf="@id/center_view"
+        android:layout_toLeftOf="@id/right_view"
+        android:layout_toStartOf="@id/right_view"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="24dp"
+        android:layout_marginRight="24dp"/>
+
+</RelativeLayout>

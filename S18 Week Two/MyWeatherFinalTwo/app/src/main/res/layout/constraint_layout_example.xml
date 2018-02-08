@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This is an example of how constraint layout would work -->
+<!-- This layout itself will not be used in any way for the semester project -->
+<!-- Notice that views maintain size even when positioned between two views -->
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <View
+        android:id="@+id/central_view"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@android:color/holo_purple"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <View
+        android:id="@+id/top_view"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="@android:color/holo_blue_dark"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <View
+        android:id="@+id/bottom_view"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="@android:color/holo_blue_dark"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <View
+        android:id="@+id/left_view"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="@android:color/holo_blue_dark"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+    <View
+        android:id="@+id/right_view"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="@android:color/holo_blue_dark"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <View
+        android:id="@+id/top_mid_view"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@android:color/holo_green_light"
+        app:layout_constraintTop_toBottomOf="@id/top_view"
+        app:layout_constraintBottom_toTopOf="@id/central_view"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <View
+        android:id="@+id/bottom_mid_view"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@android:color/holo_green_light"
+        app:layout_constraintTop_toBottomOf="@id/central_view"
+        app:layout_constraintBottom_toTopOf="@id/bottom_view"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <View
+        android:id="@+id/left_mid_view"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@android:color/holo_green_light"
+        app:layout_constraintTop_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/left_view"
+        app:layout_constraintRight_toLeftOf="@id/central_view" />
+
+    <View
+        android:id="@+id/right_mid_view"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@android:color/holo_green_light"
+        app:layout_constraintTop_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/central_view"
+        app:layout_constraintRight_toLeftOf="@id/right_view" />
+
+
+</android.support.constraint.ConstraintLayout>
