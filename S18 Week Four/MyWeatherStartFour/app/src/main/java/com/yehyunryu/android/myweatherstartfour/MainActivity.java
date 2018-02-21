@@ -32,4 +32,10 @@ public class MainActivity extends AppCompatActivity {
         mRecyclerView.setAdapter(weatherAdapter);
         mRecyclerView.setLayoutManager(layoutManager);
     }
+
+    //TODO 4. Create NetworkUtils.java
+    //TODO 5. Add API Key as a static final String variable
+    //TODO 6. Add Base URL
+    //TODO 7. Create buildURL() method
+    //TODO 8. Create makeHTTPConnection() method
 }

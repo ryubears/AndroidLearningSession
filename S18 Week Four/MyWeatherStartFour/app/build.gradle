@@ -16,6 +16,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    //TODO 3. Add Open Weather Map API Key as a String
 }
 
 dependencies {

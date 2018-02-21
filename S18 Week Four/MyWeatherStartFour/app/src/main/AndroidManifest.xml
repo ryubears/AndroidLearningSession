@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.yehyunryu.android.myweatherstartfour">
 
-    <!-- TODO 1. Add Internet Permission -->
+    <!-- TODO 1. Add Internet Permission and Network Access Permission -->
 
     <application
         android:allowBackup="true"
