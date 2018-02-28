@@ -3,7 +3,7 @@ package com.yehyunryu.android.myweatherfivestart;
 /**
  * Created by Yehyun Ryu on 2/27/2018.
  */
-
+// TODO: 2. Change Weather attributes to fit JSON response
 public class Weather {
     private String mDate;
     private String mWeatherDescription;

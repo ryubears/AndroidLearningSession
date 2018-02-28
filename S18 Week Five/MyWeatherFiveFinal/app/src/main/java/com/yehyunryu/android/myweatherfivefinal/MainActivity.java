@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         ArrayList<Weather> weathers = new ArrayList<>();
+        /*
         weathers.add(new Weather("Today", "Snowy", -13.1, -18.0));
         weathers.add(new Weather("Tomorrow", "Windy", -11.1, -14.2));
         weathers.add(new Weather("February 16", "Cloudy", -8.7, -9.0));
@@ -23,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
         weathers.add(new Weather("February 18", "Clear", -2.1, -3.4));
         weathers.add(new Weather("February 19", "Blizzard", -6.7, -8.5));
         weathers.add(new Weather("February 20", "Rainy", 2.4, 1.4));
+        */
 
         mRecyclerView = (RecyclerView) findViewById(R.id.main_recycler_view);
 

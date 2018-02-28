@@ -58,7 +58,10 @@ public class NetworkUtils {
     }
 
     public static String readFromStream(InputStream inputStream) {
-        //not filled out yet
+        // TODO: 1. Implement readFromStream()
         return "";
     }
+
+    // TODO: 3. Implement extractFromJSON()
+    // TODO: 4. Implement fetchWeather()
 }

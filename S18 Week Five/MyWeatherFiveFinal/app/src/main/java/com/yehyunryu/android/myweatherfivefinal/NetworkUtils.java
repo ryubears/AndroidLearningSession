@@ -2,11 +2,19 @@ package com.yehyunryu.android.myweatherfivefinal;
 
 import android.util.Log;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.nio.charset.Charset;
+import java.util.ArrayList;
 
 /**
  * Created by Yehyun Ryu on 2/27/2018.
@@ -57,8 +65,59 @@ public class NetworkUtils {
         }
     }
 
-    public static String readFromStream(InputStream inputStream) {
-        //not filled out yet
-        return "";
+    public static String readFromStream(InputStream inputStream) throws IOException {
+        StringBuilder output = new StringBuilder();
+        if(inputStream != null) {
+            InputStreamReader inputStreamReader = new InputStreamReader(inputStream, Charset.forName("UTF-8"));
+            BufferedReader reader = new BufferedReader(inputStreamReader);
+            String line = reader.readLine();
+            while(line != null) {
+                output.append(line);
+                line = reader.readLine();
+            }
+        }
+        return output.toString();
+    }
+
+    public ArrayList<Weather> extractFromJSON(String jsonResponse) {
+        if(jsonResponse == null) return null;
+        ArrayList<Weather> weathers = new ArrayList<>();
+        try {
+            JSONObject root = new JSONObject(jsonResponse);
+            JSONArray list = root.getJSONArray("list");
+            for(int i = 0; i < list.length(); i++) {
+                JSONObject weather = list.getJSONObject(i);
+                long time = weather.getLong("dt");
+
+                JSONObject main = weather.getJSONObject("main");
+                double currentTemp = main.getDouble("temp");
+                double minTemp = main.getDouble("temp_min");
+                double pressure = main.getDouble("pressure");
+                double humidity = main.getDouble("humidity");
+
+                JSONObject weatherInfo = weather.getJSONObject("weather");
+                int weatherId = weatherInfo.getInt("id");
+
+                String description = weatherInfo.getString("description");
+                JSONObject wind = weather.getJSONObject("wind");
+                double windSpeed = main.getDouble("speed");
+
+                weathers.add(new Weather(time, weatherId, description, currentTemp, minTemp, pressure, humidity, windSpeed));
+            }
+        } catch(JSONException e) {
+            Log.e(LOG_TAG, e.getMessage());
+        }
+        return weathers;
+    }
+
+    public ArrayList<Weather> fetchWeather(String cityName) {
+        URL url = buildURL(cityName);
+        String jsonResponse = null;
+        try {
+            jsonResponse = makeHTTPConnection(url);
+        } catch(IOException e) {
+            Log.e(LOG_TAG, e.getMessage());
+        }
+        return extractFromJSON(jsonResponse);
     }
 }
