@@ -1,4 +1,4 @@
-package com.yehyunryu.android.myweatherfivefinal;
+package com.yehyunryu.android.myweathersixfinal;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -11,7 +11,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 /**
- * Created by Yehyun Ryu on 2/27/2018.
+ * Created by Yehyun Ryu on 3/17/2018.
  */
 
 public class WeatherAdapter extends RecyclerView.Adapter<WeatherAdapter.WeatherHolder> {
@@ -40,8 +40,13 @@ public class WeatherAdapter extends RecyclerView.Adapter<WeatherAdapter.WeatherH
 
     @Override
     public int getItemCount() {
-        if(mWeathers == null) return 0;
+        if (mWeathers == null) return 0;
         return mWeathers.size();
+    }
+
+    public void swapWeather(ArrayList<Weather> newWeathers) {
+        mWeathers = newWeathers;
+        notifyDataSetChanged();
     }
 
     public class WeatherHolder extends RecyclerView.ViewHolder {

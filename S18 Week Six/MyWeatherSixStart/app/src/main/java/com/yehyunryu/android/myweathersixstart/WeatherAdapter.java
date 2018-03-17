@@ -1,4 +1,4 @@
-package com.yehyunryu.android.myweatherfivefinal;
+package com.yehyunryu.android.myweathersixstart;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -11,7 +11,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 /**
- * Created by Yehyun Ryu on 2/27/2018.
+ * Created by Yehyun Ryu on 3/17/2018.
  */
 
 public class WeatherAdapter extends RecyclerView.Adapter<WeatherAdapter.WeatherHolder> {
