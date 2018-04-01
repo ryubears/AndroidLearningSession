@@ -1,4 +1,4 @@
-package com.yehyunryu.android.myweathersevenfinal;
+package com.yehyunryu.android.myweathereightfinal;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -8,13 +8,11 @@ import android.support.v4.content.Loader;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.widget.ProgressBar;
 
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<ArrayList<Weather>> {
     private RecyclerView mRecyclerView;
-    private ProgressBar mProgressBar;
 
     private static final int WEATHER_LOADER = 101;
     private static final String WEATHER_QUERY_KEY = "weather_query";
@@ -27,7 +25,6 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         setContentView(R.layout.activity_main);
 
         mRecyclerView = (RecyclerView) findViewById(R.id.main_recycler_view);
-        mProgressBar = (ProgressBar) findViewById(R.id.main_progress_bar);
 
         mAdapter = new WeatherAdapter(this, null);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
@@ -36,8 +33,15 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         mRecyclerView.setLayoutManager(layoutManager);
 
         Bundle args = new Bundle();
-        args.putString(WEATHER_QUERY_KEY, "Seoul");
-        getSupportLoaderManager().initLoader(WEATHER_LOADER, args, this).forceLoad();
+        args.putString(WEATHER_QUERY_KEY, "Minneapolis");
+
+        LoaderManager loaderManager = getSupportLoaderManager();
+        if (loaderManager.getLoader(WEATHER_LOADER) == null) {
+            loaderManager.initLoader(WEATHER_LOADER, args, this).forceLoad();
+        } else {
+            loaderManager.restartLoader(WEATHER_LOADER, args, this).forceLoad();
+        }
+
     }
 
     @Override
